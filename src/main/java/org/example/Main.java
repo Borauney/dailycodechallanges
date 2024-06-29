@@ -29,7 +29,6 @@ public class Main {
                 if(list.get(i)==k || list.get(i)+list.get(j)==k ){
                     return true;
                 }
- gi
             }
         }
         return  false;
