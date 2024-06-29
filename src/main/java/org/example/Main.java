@@ -10,29 +10,33 @@ import static java.lang.reflect.Array.set;
 public class Main {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
-        list.add(10);
-        list.add(15);
+        list.add(1);
+        list.add(2);
         list.add(3);
-        list.add(3);
+        list.add(4);
+        list.add(5);
 
-        boolean result = twosum(list,17);
+        ArrayList<Integer> result = questiontwo(list);
         System.out.println(result);
         
     }
 
-    public static boolean twosum(List<Integer>list,int k){
+    public static ArrayList<Integer> questiontwo(List<Integer>list){
+        ArrayList<Integer> result = new ArrayList<>();
+        result.addAll(list);
 
-        for (int i =0; i<list.size();i++){
+        for(int i=0; i<list.size();i++){
+            int product=1;
+            for(int j=0; j<list.size();j++){
+                    if(i!=j){
+                        product*=list.get(j);
 
-            for(int j=0 ; j<list.size();j++){
-
-                if(list.get(i)==k || list.get(i)+list.get(j)==k ){
-                    return true;
                 }
- gi
             }
+            result.set(i,product);
         }
-        return  false;
+        return  result;
+
     }
 
 }
